@@ -1,0 +1,235 @@
+/*导航栏*/
+.nav{
+	width: 1280px;
+	height: 120px;
+	/*background: yellow;*/
+	margin: 0 auto;
+}
+.nav_pic{
+	width: 340px;
+	height: 120px;
+	background: url(../img/tu.png) no-repeat 0 20px;
+	float: left;
+}
+.nav_content{
+	width: 455px;
+	height: 40px;
+	/*background: skyblue;*/
+	float: left;
+	margin-top: 40px;
+}
+.nav_content li{
+	float: left;
+	
+}
+.nav_content li a{
+	display: block;
+	width: 90px;
+	height: 40px;
+	/*background: #CCCCCC;*/
+	text-decoration: none;
+	text-align: center;
+	border-right: 1px solid #666;
+	color: #999;
+	
+}
+.nav_content li a:hover{
+	background: #CCCCCC;
+}
+.nav_content .end{
+	border-right: none;
+}
+.nav_content li span{
+	display: block;
+}
+.nav_search{
+	width: 240px;
+	height: 60px;
+	/*background: salmon;*/
+	float: right;
+	margin-top: 38px;
+}
+.nav_search_hot{
+	width: 184px;
+	height: 60px;
+	/*background: seagreen;*/
+	float: left;
+	position: relative;
+}
+.nav_search_hot input{
+	width:172px;
+	height: 25px;
+	margin-top: 10px;
+	border:none;
+	border-bottom: 1px solid;
+	
+	
+}
+.nav_search_hot button{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 10px;
+	right: 12px;
+	border: none;
+	background: url(../img/xiaojingzi.png) no-repeat 0 4px;
+	cursor: pointer;
+}
+.nav_search_hot .hotsearch{
+	width: 180px;
+	height: 23px;
+	color: #999999;
+	
+}
+.hotsearch a{
+	color: #999;
+	margin-right: 5px;
+}
+.nav_search_pic{
+	width: 38px;
+	height: 36px;
+	background:url(../img/shoppingcar.png) no-repeat -8px -7px;
+	float: right;
+	margin-top:6px ;
+	border-radius: 50%;
+	margin-right: 16px;
+}
+
+.change{
+	width: 38px;
+	height: 36px;
+	background:url(../img/shoppingcar.png) no-repeat -4px -65px;
+	float: right;
+	margin-top:6px ;
+	border-radius: 50%;
+}
+
+/*轮播图部分*/
+.banner{
+	width: 1423px;
+	height: 750px;
+	background: url(../img/xingyd-bg.jpg) no-repeat center center;
+	position: relative;
+		overflow: hidden;       /*floor的图片过大,产生了滚动条 */  
+	
+}
+
+.banner p{
+	width: 450px;
+	height: 52px;
+	font-size: 40px;
+	position: absolute;
+	left: 50%;
+	margin-left: -225px;
+	top: 220px;
+	color: #fff; 
+}
+.banner .cloud{
+	width: 1280.69px;
+	height: 316px;
+	background: url(../img/cloud.png) no-repeat center center;
+	position: absolute;
+	/*width: 90%;*/
+    top: 120px;
+    background-size: contain;
+	animation: name 2s infinite;  /* 动画*/
+}
+@keyframes name{    
+	0{opacity: 1;}    /*动画效果*/
+	50%{opacity: 0.5;}
+	100%{opacity: 0.1;}
+}
+/*@keyframes name{
+	from{}
+	to{}
+}*/
+.banner .floor{
+	width: 2846px;        /*  1张背景图的宽度是1423px 相当与 有2张图*/
+	height: 545px;
+	background: url(../img/sh.png) no-repeat  center center;
+	left: -1423px;
+	position: absolute;
+	bottom: 0px;
+
+	
+}
+
+.banner .lazy{
+	width: 534px;
+	height: 184px;
+	background: url(../img/car.png) no-repeat center center;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -267px;
+}
+.delivery_service{
+	width:100% ;
+	height: 2670px;
+	background: #dee0de;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+.delivery_service_pic{
+	width: 1025px;
+	height: 275px;
+	background:url(../img/fourpart.png) no-repeat;
+	margin: 0 auto; 
+	margin-top: 52px;
+}
+.delivery_service_serve{
+	width: 562px;
+	height: 142px;
+	background: url(../img/service.png) no-repeat;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+.delivery_service_time{
+	width: 1038px;
+	height: 378px;
+	background: url(../img/table.png) no-repeat;
+	margin: 0 auto;
+	margin-top: 30px;
+	
+}
+.delivery_service .know{
+	width: 1001px;
+	height: 40px;
+	
+	margin: 0 auto;
+	
+}
+.delivery_service .know a{
+	float: right;
+	line-height: 10px;
+	cursor: pointer;
+	color: #4d4d4d;
+	text-decoration: underline;
+	font-size: 14px;
+}
+.delivery_service_cold{
+	width: 1423px;
+	height: 699px;
+	background: url(../img/freshpic01.png) no-repeat center center;   /* 水平居中   垂直居中*/
+	margin-top: 15px;
+}
+.delivery_service_fruit{
+	width: 930px;
+	height: 200px;
+	background: url(../img/freshtitle.png) no-repeat center center;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+.delivery_service_save{
+	width: 1423px;
+	height: 699px;
+	background: url(../img/freshpic01.png) no-repeat center center;
+	margin: 0 auto;
+	margin-top: 40px;
+	
+}
+	
+	
+	
+	
+

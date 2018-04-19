@@ -1,0 +1,191 @@
+#bottom_box{
+	width: 1280px;
+	height: 480px;
+	/*background: darkseagreen;*/
+	margin: 0 auto;
+}
+.production_line{
+	width: 1280px;
+	height: 104px;
+	margin: 0 auto;
+	/*background: skyblue;*/
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+}
+
+.production_line ul li{
+	float: left;
+	width: 319px;
+	height: 60px;
+	border-right: 1px solid #666666;
+	background:url(../img/icon.png) no-repeat;
+	margin-top: 22px;
+}
+.production_line .form{
+	background-position: 35px 0;
+}
+.production_line .VIP{
+	background-position: 35px -60px;
+}
+.production_line .logistics{
+	background-position: 35px -120px;
+}
+.production_line .time{
+	background-position: 35px -180px;
+	border-right:none;
+}
+
+/*联系方式*/
+.contact_information{
+	width: 1280px;
+	height: 200px;
+	/*background: yellow;*/
+	margin: 0 auto;
+	overflow: hidden;
+	border-bottom: 1px solid #666666;
+}
+.contact_information .contact_left{
+	width: 320px;
+	height: 170px;
+	/*background: red;*/
+	margin: 15px 68px;
+	float: left;
+}
+.contact_left .phone{
+	margin: 5px 0;
+	font-size: 16px;
+	margin-left: 70px;
+	color: darkorange;
+}
+.contact_left .ke_phone,.contact_left .zai_phone{
+	font-size: 16px;
+	margin-left: 50px;
+	
+}
+.contact_left span{
+	color: #000000;
+}
+
+.contact_information .contact_middle{
+	width: 310px;
+	height: 165px;
+	/*background: red;*/
+	margin: 15px 0;
+	float: left;
+}
+.contact_middle_l{
+	width: 130px;
+	height: 165px;
+	/*background: salmon;*/
+	
+	float: left;
+}
+.contact_middle_l p{
+	text-align: center;
+	margin-top: 8px;
+}
+.contact_middle_r{
+	width: 130px;
+	height: 165px;
+	/*background: salmon;*/
+	float: right;
+}
+.contact_middle_r p{
+	text-align: center;
+	margin-top: 8px;
+}
+.contact_information .contact_right{
+	width: 382px;
+	height: 134px;
+	/*background: red;*/
+	
+	margin: 30px 65px;
+	float: left;
+}
+.contact_right li{
+	float: left;
+	width: 70px;
+	height: 137px;
+	margin-left: 25px;
+}
+.contact_right h4{
+	font-size: 16px;
+	margin-bottom: 20px;
+	color: #000000;
+}
+.contact_right li a{
+	display: block;
+	color: #999;
+	line-height: 30px;
+}
+.contact_right li a:hover{
+	color: #228B22;
+}
+.contact_right .width_max{
+	width: 72px;
+}
+
+/*最底部*/
+.bottom{
+	width: 1280px;
+	height: 173px;
+	margin: 0 auto;
+	
+	overflow: hidden;
+}
+.bottom p{
+	width: 524px;
+	height: 20px;
+	margin: 0 auto;
+	font-size: 14px;
+	margin-top: 15px;
+}
+.bottom p a{
+	color: #666;
+}
+.bottom .fs_2{
+	width: 125px;
+	height: 20px;
+	margin: 0 auto;
+	font-size: 14px;
+	margin-top: 8px;
+	color: #228B22;
+}
+.bottom .pic_2{
+	width: 110px;
+	height: 55px;
+	
+	margin: 0 auto;
+}
+.bottom .pic_2 img{
+	margin-top: 6px;
+	margin-left: 3px;
+	cursor: pointer;
+}
+.fixed{
+	width: 40px;
+	height: 112px;
+	/*background: url(../img/kf.png) no-repeat;*/
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+.fixed ul .list_one{
+	width: 40px;
+	height: 38px;
+	background: url(../img/kf.png) no-repeat 0 0;
+	cursor: pointer;
+}
+
+.fixed ul .list_two{
+	width: 40px;
+	height: 38px;
+	background: url(../img/kf.png) no-repeat 0 -38px;
+	cursor: pointer;
+}
+.fixed ul .list_three{
+	width: 40px;
+	height: 38px;
+	background: url(../img/kf.png) no-repeat 0 -77px;
+	cursor: pointer;
+}
