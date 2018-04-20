@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--WebApp全屏模式   隐藏地址栏-->        <!--viewport可视窗口-->
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<!--苹果强制全屏显示-->
+		<meta name="apple-touch-fullscreen" content="yes"/>
+		<!--强制全屏显示-->
+		<meta name="full-screen" content="yes"/>
+		<!--制定iphone中safari顶端的状态条的样式（default:白色，black:黑色，black-translucent：半透明）-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<!--告诉设备忽略将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no"/>
+		<!--告诉设备忽略将页面中的地址识别 -->
+		<meta name="format-detection" content="address=no"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<div class="qr_code">
+				<img src="taobao/效果图1_03.png"/>
+				<p>扫一扫</p>
+			</div>
+			<div class="search">
+				<input type="text" name="" placeholder="纤纤玉手如何保养" />
+			</div>
+			<div class="qr_code message">
+				<img src="taobao/效果图1_06.png"/>
+				<p>消息</p>
+			</div>
+		</header>
+		<section id="banner">
+			<div class="swiper-container">
+			  <div class="swiper-wrapper">
+			    <div class="swiper-slide"><img src="taobao/carouselBox61.jpg"/></div>
+			    <div class="swiper-slide"><img src="taobao/carouselBox62.jpg"/></div>
+			    <div class="swiper-slide"><img src="taobao/carouselBox63.jpg"/></div>
+			  </div>
+			  <div class="swiper-pagination"></div>
+			</div>
+		</section>
+		<!--导航部分-->
+		<nav id="nav">
+			<ul>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+				<li>
+					<img src="taobao/menu1.png"/>
+					<span>天猫</span>
+				</li>
+			</ul>
+		</nav>
+		
+		
+	</body>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			document.documentElement.style.fontSize=innerWidth/7.5+"px";
+			
+		}
+		onresize=function(){
+				document.documentElement.style.fontSize=innerWidth/7.5+"px";
+				
+		}
+		var myswiper=new Swiper(".swiper-container",{
+			autoplay:2000,
+			speed:300,
+			pagination : '.swiper-pagination',
+		})
+		
+	</script>
+</html>
