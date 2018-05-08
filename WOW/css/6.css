@@ -1,0 +1,60 @@
+/*@charset "utf-8";
+
+#projectmore:hover{background:#e71a1f}
+#indexPage #mpartner .slider_control a:hover{backgroulor:#e71a1f}
+
+#contactform .inputtxt.active{border-color:#e71a1f}
+#pages a.active,#pages a:hover{background:#e71a1f}
+#category a.active,#category a:hover{background:#e71a1f;border-color:#e71a1f}
+
+.bx-wrapper .bx-controls-direction a:hover{background-color:#e71a1f}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,.bx-wrapper .bx-pager.bx-default-pager a.active,.bx-wrapper .bx-pager.bx-default-pager a:focus{border:#e71a1f 1px solid;background-color:#e71a1f}
+
+
+
+
+#indexPage #mservice .slider_wrapper ul li div p.description{color:#6F6F6F}
+
+
+
+
+#indexPage a.more:hover{border:#4f4f4f 1px solid}
+
+
+element.style{background:#000}
+.npagePage .content{background:#111111}
+
+
+
+
+
+.teamitem .teaminfo .subtitle{color:#666}
+#indexPage #mteam .slider_control a i{color:#5F5F5F}
+
+
+
+.npagePage #projectlist .projectitem{width:280px;margin-right:20px;margin-bottom:40px}
+.npagePage #projectlist .wrapper{margin-left:auto;margin-right:-20px}
+::-webkit-scrollbar-track-piece{width:8px;background-color:#0b0c11}
+::-webkit-scrollbar{width:8px;background-color:#e71822}
+::-webkit-scrollbar-thumb{width:8px;background-color:#e71822}
+::-webkit-scrollbar-thumb:hover{width:8px;background-color:#3d3d3d}
+
+#projectimages{background:#0E0E0E none repeat scroll 0% 0%}
+#header.default{background:rgb(10,10,11) none repeat scroll 0% 0%}
+.teamitem .teaminfo .title{font-size:18px;color:#FFF}
+
+.postbody a{color:#e71a1f}
+
+
+#teambody .theader .title{color:#FFFFFF}
+
+#projectinfo .header{padding:0;border-bottom:#404040 1px dotted}
+.npagePage #projectlist{width:1180px;margin:0 auto}
+#projectinfo .description a{background:#FF0500}
+#projectinfo .description a:hover{background:#E90500}
+#header ul li.navitem ul.subnav li {border-bottom: 1px solid #151515;}
+.nobanner #header {background: rgba(15, 15, 15, 0.9);}
+
+#projecttags a {background: #272727;}
+#projecttags a:hover {background: #2A2A2A;}*/

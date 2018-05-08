@@ -1,0 +1,641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--该内容表示标题栏显示的图标-->
+<link rel="shortcut icon" href="image/1440141587755.ico">
+
+
+<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!--该内容表示页面中用到的一些图标-->
+<link href="css/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>末那</title>
+
+<!--页面加载时元素产生一些动画效果插件，插件WOW.js 依赖于 animate.css-->
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript">
+new WOW().init();
+</script>
+
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(window).scroll(function(){
+		if($(document).scrollTop()>50){
+			$("#header").addClass("mini");  //改变导航背景颜色和高度
+			$("ul.subnav").css("top","48px");  //改变下拉菜单跟导航的位置
+		}
+		else{
+			$("#header").removeClass("mini");
+			$("ul.subnav").css("top","58px");
+		}
+		
+		
+		<!--控制banner滚动速度-->
+		var scrollTop="translateY("+$(document).scrollTop()*0.5+"px)";
+		$(".ulCenter").css({"transform":scrollTop})
+	
+		<!--控制goTop显示隐藏-->
+		if($(document).scrollTop()>800){
+			$("#goTop").css("display","block");
+		}
+		else{
+			$("#goTop").css("display","none");	
+		}
+	
+	})
+	
+	<!--服务介绍左右切换-->
+	var ulSlidenLength=$("#mservice ul.slider li").size()*370;
+	$("#mservice ul.slider").css("width",ulSlidenLength);
+	$(".prev").click(function(){
+		var oLeft=$("#mservice ul.slider").css("left");
+		oLeft=Number(oLeft.substring(0,oLeft.length-2));
+		if(oLeft<0){
+		$("#mservice ul.slider:not(:animated)").animate({"left":(oLeft+370)+"px"},500);
+		}		
+	})	
+	
+	$(".next").click(function(){
+		var oLeft=$("#mservice ul.slider").css("left");
+		oLeft=Number(oLeft.substring(0,oLeft.length-2));
+		if(oLeft>-(ulSlidenLength-1110)){
+			$("#mservice ul.slider:not(:animated)").animate({"left":oLeft-370+"px"},500);
+		}	
+	})	
+	
+	
+	
+
+
+	<!--单击回到顶部-->
+	$("#goTop").click(function(){
+			$("html,body").animate({"scrollTop":"0px"},500)
+	})
+
+	
+	
+	
+	
+	//图片轮播
+	
+	
+	var windowWidth=$(window).width();
+	$(".ulCenter ul li").css("width",windowWidth);
+	$(".ulCenter ul li img").css("width",windowWidth);
+	var lis=$(".ulCenter ul li");
+	var lislen=lis.length;
+	$(".ulCenter ul").css({"width":lislen*windowWidth,"left":-windowWidth})
+	
+	
+		
+	var t=setInterval(as,3000);
+	function as(){
+		$(".ulCenter ul").animate({left:-windowWidth},1000,function(){
+			$(".ulCenter ul").find('li').eq(0).appendTo($(".ulCenter ul"));
+			$(".ulCenter ul").css({'left':0})
+			}
+		)
+	}
+	
+	$(".gori").click(function(){
+		clearInterval(t);
+		$(".ulCenter ul:not(:animated)").animate({left:-windowWidth},
+				function(){
+					$(".ulCenter ul").find('li').eq(0).appendTo($(".ulCenter ul"));
+					$(".ulCenter ul").css({'left':0})
+				});		
+	})
+	
+	$(".gole").click(function(){
+		clearInterval(t);
+		$(".ulCenter ul:not(:animated)").find('li:last').prependTo($(".ulCenter ul"));
+			$(".ulCenter ul").css({left:-windowWidth});
+			$(".ulCenter ul").animate({left:0});								
+	});
+		
+})
+
+
+</script>
+</head>
+<body>
+
+<!--导航开始-->
+<div class="" id="header">
+  <div class="content">
+  	<a href="javascript:;" id="logo"><img src="image/1439803961382.png" height="40"></a>
+    <ul id="nav">
+      <li class="navitem"><a class="active" href="javascript:;" >首页</a></li>
+      <li class="navitem"><a href="javascript:;" >关于我们</a>
+        <ul class="subnav">
+          <li><a href="javascript:;" >TEAM 团队<i class="fa fa-angle-right"></i></a></li>
+          <li><a href="javascript:;" >日记<i class="fa fa-angle-right"></i></a></li>
+        </ul>
+      </li>
+      <li class="navitem"><a href="javascript:;" >作品目录</a>
+        <ul class="subnav">
+          <li><a href="javascript:;" >作品目录<i class="fa fa-angle-right"></i></a></li>
+          <li><a href="javascript:;" >原创作品<i class="fa fa-angle-right"></i></a></li>
+          <li><a href="javascript:;" >项目合作<i class="fa fa-angle-right"></i></a></li>
+        </ul>
+      </li>
+      <li class="navitem"><a href="javascript:;" >服务介绍</a></li>
+      <li class="navitem"><a href="javascript:;" >简介</a></li>
+      <li class="navitem"><a href="javascript:;" >合作伙伴</a></li>
+      <li class="navitem"><a href="javascript:;" >商店</a></li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--导航结束--> 
+  
+<div id="sitecontent">
+  <div id="indexPage">
+  		<!--banner图 or 轮播图
+        <div id="mslider">
+        	
+        </div>-->
+  		
+        
+      	<div id="banner">            
+                <div class="ulCenter">
+                    <ul>
+                      <li><img src="image/1439867462459.jpg" /></li>
+                      <li><img src="image/1439868604657.jpg" /></li>
+                      <li><img src="image/144489870929.jpg"/></li>
+                    </ul>
+                </div>
+                
+                <div id="control">
+                    <a class="gole fa fa-angle-left" href="javascript:;"></a>
+                    <a class="gori fa fa-angle-right" href="javascript:;"></a>
+                </div>
+        </div>
+        
+        
+        
+        
+  
+  		<!--服务介绍模块-->
+        <div id="mservice" class="module active" data-infiniteloop="">
+          <div class="bgmask"></div>
+          <div class="content fw">
+            <div class="header wow slideInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;">
+              <p class="title">服务介绍</p>
+              <p class="subtitle">What can we do</p>
+            </div>
+            <div class="module-slider">
+              <div class="slider_control prev fl"><a class="bx-prev" href="javascript:;"><i class="fa fa-angle-left"></i></a></div>
+              <div class="slider_control next fr"><a class="bx-next" href="javascript:;"><i class="fa fa-angle-right"></i></a></div>
+              <div class="slider_wrapper">
+                <div class="bx-wrapper" style="max-width: 1060px; margin: 0px auto;">
+                  <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 230px;">
+                    <ul class="slider" style="width: 615%; height:230px; position:absolute; left:0; top:0;">
+                      <li class="serviceitem wow slideInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;">
+                      	<a href="javascript:;">
+                            <img src="image/1444282800715.png" width="320" height="120">
+                        </a>
+                        <div>
+                          <p class="title">衍生品</p>
+                          <p class="description">遊戲、影視、動漫周邊高端衍生品制作</p>
+                        </div>
+                      </li>
+                      <li class="serviceitem wow slideInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;">
+                      	<a href="javascript:;">
+                            <img src="image/1444282954518.png" width="320" height="120">
+                        </a>
+                        <div>
+                          <p class="title">電影物理特效</p>
+                          <p class="description">電影特效化妝，電影級雕像、道具模型等制作</p>
+                        </div>
+                      </li>
+                      <li class="serviceitem wow slideInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;">
+                      	<a href="javascript:;">
+                            <img src="image/1444286095679.png" width="320" height="120">
+                        </a>
+                        <div>
+                          <p class="title">培訓</p>
+                          <p class="description">末那手辦全技能研修班，專業相關技能培訓</p>
+                        </div>
+                      </li>
+                      <li class="serviceitem">
+                      	<a href="javascript:;">
+                            <img src="image/1444282764664.png" width="320" height="120">
+                        </a>
+                        <div>
+                          <p class="title">比賽及策展</p>
+                          <p class="description">策劃組織手辦造型相關比賽及展覽活動</p>
+                        </div>
+                      </li>
+                      <li class="serviceitem">
+                      	<a href="javascript:;">
+                            <img src="image/1444282764664.png" width="320" height="120">
+                        </a>
+                        <div>
+                          <p class="title">比賽及策展</p>
+                          <p class="description">策劃組織手辦造型相關比賽及展覽活動</p>
+                        </div>
+                      </li>
+                      <li class="serviceitem">
+                      	<a href="javascript:;">
+                            <img src="image/1444282764664.png" width="320" height="120">
+                        </a>
+                        <div>
+                          <p class="title">比賽及策展</p>
+                          <p class="description">策劃組織手辦造型相關比賽及展覽活動</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bx-controls"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  	
+    
+    
+    	<!--简介模块-->
+    	<div id="mpage" class="module bgShow active" style="background-image: url(image/1439888965539.jpg); background-position: 50% 0px;">
+          <div class="bgmask"></div>
+          <div class="content">
+            <div class="module-slider">
+              <div class="slider_wrapper">
+                <ul class="slider one">
+                  <li>
+                    <div class="header wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                      <p class="title">简介</p>
+                      <p class="subtitle">About Us</p>
+                    </div>
+                    <p class="description wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">末那，執著於頓悟的魂魄！
+                      末那工作室是中國大陸地區第壹家以原創高端GK模型及雕像開發生產的專業工作室。</p>
+                    <a href="javascript:;" class="more wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">MORE<strong class="line2"></strong><i class="fa fa-angle-right"></i></a>
+                    <div class="fimg wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp; background-image: url(&quot;http://resources.uemo.net/templates/upload/6/201509/1441783756197.png&quot;);"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    	</div>
+        
+        
+        <!--作品目录-->
+  		<div id="mproject" class="module active">
+            <div class="bgmask"></div>
+            <div class="content">
+                <div class="header">
+                  <p class="title">作品目录</p>
+                  <p class="subtitle">Product</p>
+                </div>
+                <div id="category">
+                    <a href="javascript:;">梦中景</a>
+                    <a href="javascript:;">斗战神</a>
+                    <a href="javascript:;">原创作品</a>
+                    <a href="javascript:;">项目合作</a>
+                </div>
+                <div id="projectlist">
+              		<div class="wrapper">
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".0s" style="visibility: visible; animation-delay: 0s; animation-name: fadeInUp;">
+                            <a href="javascript:;">
+                              <img src="image/1449824834660.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《早稻阿狗》</p>
+                                  <p class="subtitle"></p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                            </a>
+                        </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                            <a href="javascript:;">
+                              <img src="image/1444467154201.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《 爆破鬼才·吉格斯》</p>
+                                  <p class="subtitle">客户：腾讯游戏 • 英雄联盟</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                            </a>
+                        </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            <a href="javascript:;">
+                              <img src="image/1444456181251.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《鬼侍铁血》</p>
+                                  <p class="subtitle"></p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                            </a>
+                        </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        	<a href="javascript:;">
+                            <img src="image/1444730387525.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《Iron corax No.2》</p>
+                                  <p class="subtitle">Insect hunter第3弹</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                             </a>
+                         </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                        	<a href="javascript:;">
+                              <img src="image/1444901354505.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《螳螂》</p>
+                                  <p class="subtitle">Insect hunter第2弹</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                          </a>
+                         </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                        	<a href="javascript:;"><img src="image/1444463003375.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《寒冰领主》</p>
+                                  <p class="subtitle">客户：西山居 • 神之遗迹</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                          </a>
+                         </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                        	<a href="javascript:;"><img src="image/1443410490777.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《吸血鬼猎人D（Vampire Hunter D)胸像》</p>
+                                  <p class="subtitle">原创作品</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                          	</a>
+                        </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                        	<a href="javascript:;"><img src="image/1441959679281.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《牛魔平天》</p>
+                                  <p class="subtitle">客户：腾讯游戏 • 斗战神</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                          	</a>
+                        </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
+                        	<a href="javascript:;"><img src="image/1444632575650.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《银河战舰》</p>
+                                  <p class="subtitle">客户：腾讯游戏 • 斗战神</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                             </a>
+                         </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                        	<a href="javascript:;"><img src="image/1444967470734.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">西游骸骨纯银男戒《魔》、《驹》</p>
+                                  <p class="subtitle">末铘银饰</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                             </a>
+                          </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".10s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        	<a href="javascript:;"><img src="image/1442223929515.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《化生地藏》</p>
+                                  <p class="subtitle">天娑冥乱系列第1弹</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                          	</a>
+                        </div>
+                        <div class="projectitem wow fadeInUp" data-wow-delay=".11s" style="visibility: visible; animation-delay: 0.11s; animation-name: fadeInUp;">
+                        	<a href="javascript:;"><img src="image/144489870928.jpg" width="500" height="320">
+                              <div class="project_info">
+                                <div>
+                                  <p class="title">《幽冥赤兔神吕布》</p>
+                                  <p class="subtitle">客户：三国杀</p>
+                                </div>
+                                <div class="line1"></div>
+                              </div>
+                            </a>
+                         </div>
+                     </div>
+                </div>
+                <div class="clear"></div>
+                <a href="javascript:;" id="projectmore">VIEW MORE<strong class="line2"></strong></a>
+             </div>
+        </div>
+        
+        <!--末那众生-->
+        <div id="mteam" class="module bgShow active" style="background-image: url(image/1439824792276.jpg); background-position: 50% 0px;">
+          <div class="bgmask"></div>
+          <div class="content fw">
+            <div class="module-slider">
+              <div class="slider_wrapper">
+                <ul class="slider">
+                  <li>
+                    <div class="header wow slideInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: slideInUp;"><a href="javascript:;"><img src="image/1453879496182.jpg" width="180" height="180">
+                      <p class="title">末那众生</p>
+                      <p class="subtitle">末那工作室是中國大陸地區第壹家以原創高端GK模型及雕像開發生產的專業工作室。</p>
+                      <div class="line1"></div>
+                      </a></div>
+                    <p class="description wow slideInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: slideInUp;"> 末那工作室,組建於2010年，成立初期主要從事原創手辦模型的制作，作品的題材以中國佛教及神話題材為主，以獨特的創作風格 受到廣泛關註。2013年，末那工作室開始與國內外各大知名廠商合作，以比肩世界專業級的高端制作品質獲得了各界的認可。</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    	</div>
+        
+        <!--日记-->
+        <div id="mnews" class="module active">
+          <div class="bgmask"></div>
+          <div class="content">
+            <div class="header wow slideInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;">
+              <p class="title">日記</p>
+              <p class="subtitle">News</p>
+            </div>
+            <div id="newslist">
+              <div class="newstitem news_mar">
+                <div class="newscontent">
+                	<a class="newsinfo fl" href="javascript:;">
+                      <div class="newsdate fl wow fadeInLeft" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                        <p class="md">02-02</p>
+                        <p class="year">2016</p>
+                      </div>
+                      <div class="newsbody fl wow fadeInRight" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                        <p class="title ellipsis">末那丨2015年度工作及作品总结</p>
+                        <p class="description">2015年，末那工作室的第五个年头。这一年，我们继续投身于热爱的创作工作，结识了新朋友，尝试了更多有意思的事情。同时，也经历了各种挑战。</p>
+                      </div>
+                    </a>
+                    <i class="fa fa-angle-right fr"></i>
+                 </div>
+              </div>
+              <div class="newstitem ">
+                <div class="newscontent"><a class="newsinfo fl" href="http://www.manasworkshop.com/news/post/695/">
+                  <div class="newsdate fl wow fadeInLeft" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                    <p class="md">01-28</p>
+                    <p class="year">2016</p>
+                  </div>
+                  <div class="newsbody fl wow fadeInRight" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                    <p class="title ellipsis">重整河山待后生---末那合作《斗战神》系列衍生品的坚持</p>
+                    <p class="description">如果执着与情怀是根基，那么游戏项目、市场品牌、版权等众多部门对我们的大力支持及绝对信任，背后优秀强大的美术概念团队就是阳光与土壤。众多才华四溢的人，在同一个时代的某个节点相遇，是偶然也是必然。</p>
+                  </div>
+                  </a><i class="fa fa-angle-right fr"></i></div>
+              </div>
+              <div class="newstitem ">
+                <div class="newscontent"><a class="newsinfo fl" href="http://www.manasworkshop.com/news/post/383/">
+                  <div class="newsdate fl wow fadeInLeft" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                    <p class="md">12-25</p>
+                    <p class="year">2015</p>
+                  </div>
+                  <div class="newsbody fl wow fadeInRight" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                    <p class="title ellipsis">末那众生，寻龙摸金</p>
+                    <p class="description">《寻龙诀》对于我们来说是一次非常难得的体验，我们从概念设计，道具制作到后期衍生品的开发都有幸参与。</p>
+                  </div>
+                  </a><i class="fa fa-angle-right fr"></i></div>
+              </div>
+              <div class="newstitem news_mar">
+                <div class="newscontent"><a class="newsinfo fl" href="http://www.manasworkshop.com/news/post/169/">
+                  <div class="newsdate fl wow fadeInLeft" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                    <p class="md">11-20</p>
+                    <p class="year">2015</p>
+                  </div>
+                  <div class="newsbody fl wow fadeInRight" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                    <p class="title ellipsis">松风之旅丨“百种松风”早稻现场签绘及复制画展纪实</p>
+                    <p class="description">松风之旅--我们都将继续纯粹着，如那松一般，如那风一般！</p>
+                  </div>
+                  </a><i class="fa fa-angle-right fr"></i></div>
+              </div>
+              <div class="newstitem ">
+                <div class="newscontent"><a class="newsinfo fl" href="http://www.manasworkshop.com/news/post/124/">
+                  <div class="newsdate fl wow fadeInLeft" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                    <p class="md">07-20</p>
+                    <p class="year">2015</p>
+                  </div>
+                  <div class="newsbody fl wow fadeInRight" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                    <p class="title ellipsis">末那造型大奖丨《斗战神•鬼神誌(西游篇)--造型大奖》正式开启</p>
+                    <p class="description">由腾讯游戏《斗战神》独家冠名，末那MODELS主办，VERY MUSEUM，LEEWIART协办的国内原创类手办模型顶级赛事， 亦作为模型创作爱好者和从业者的交流与展示平台。</p>
+                  </div>
+                  </a><i class="fa fa-angle-right fr"></i></div>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <a href="javascript:;" class="more wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">MORE<strong class="line2"></strong><i class="fa fa-angle-right"></i></a>
+            <div style="height:0">&nbsp;</div>
+          </div>
+        </div>
+        
+        
+        <!--联系我们-->
+        <div id="mcontact" class="module bgShow active" style="background-image: url(image/1438618614879.jpg); background-position: 50% 0px;">
+      <div class="bgmask"></div>
+      <div class="content fw">
+        <div class="header wow fadeInUp" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+          <p class="title">联系我们</p>
+          <p class="subtitle">Contact</p>
+        </div>
+        <div id="contactlist">
+          <div id="contactinfo" class="fl wow fadeInLeft" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+            <h3 class="ellipsis">北京華彩光影傳媒文化有限責任公司（旗下註冊品牌：末那工作室）</h3>
+            <p class="ellipsis">地点：北京市朝陽區百子灣路二十二院街藝術區A2-5</p>
+            <p class="ellipsis">邮编：100022</p>
+            <p class="ellipsis">电话：010-58769723</p>
+            <p class="ellipsis">邮箱：manogk@163.com</p>
+            <div>
+            	<a class="fl" href="javascript:;"><i class="fa fa-weibo"></i></a>
+                <a class="fl" href="javascript:;"><i class="fa fa-qq"></i></a> 
+                <a id="mpbtn" class="fl" href="javascript:;"><i class="fa fa-weixin"></i></a>
+            </div>
+          </div>
+          <div id="contactform" class="fr wow fadeInRight" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+            <form action="javascript:;" method="post">
+              <p>
+                <input type="text" class="inputtxt" name="name" placeholder="姓名" autocomplete="off">
+              </p>
+              <p>
+                <input type="text" class="inputtxt" name="email" placeholder="邮箱" autocomplete="off">
+              </p>
+              <p>
+                <input type="text" class="inputtxt" name="tel" placeholder="电话" autocomplete="off">
+              </p>
+              <p>
+                <textarea class="inputtxt" name="content" placeholder="内容" autocomplete="off"></textarea>
+              </p>
+              <p>
+                <input class="inputsub" type="submit" value="提交">
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    	<!--合作机构-->
+    	<div id="mpartner" class="module active">
+          <div class="bgmask"></div>
+          <div class="content fw">
+            <div class="module-slider">
+              <!--<div class="slider_control prev fl wow bounceIn" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;">
+              	<a class="bx-prev" href="javascript:;"><i class="fa fa-angle-left"></i></a>
+              </div>
+              <div class="slider_control next fr wow bounceIn" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;">
+              	<a class="bx-next" href="javascript:;"><i class="fa fa-angle-right"></i></a>
+              </div>-->
+              <div class="slider_wrapper">
+                <div class="bx-wrapper" style="max-width: 960px; margin: 0px auto;">
+                  <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 80px;">
+                    <ul class="slider" style="width: 1415%; position: relative; transition-duration: 0s;">
+                      <li class="wow slideInUp" data-wow-delay=".1s" style="float: left; list-style: none; position: relative; width: 160px; visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;"><a href="javascript:;" title="腾讯游戏"><img src="image/1440526515572.png" width="160" height="80"></a></li>
+                      <li class="wow slideInUp" data-wow-delay=".1s" style="float: left; list-style: none; position: relative; width: 160px; visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;"><a title="网易游戏"><img src="image/1440581936124.png" width="160" height="80"></a></li>
+                      <li class="wow slideInUp" data-wow-delay=".1s" style="float: left; list-style: none; position: relative; width: 160px; visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;"><a title="GAEA盖娅"><img src="image/1440581812728.png" width="160" height="80"></a></li>
+                      <li class="wow slideInUp" data-wow-delay=".1s" style="float: left; list-style: none; position: relative; width: 160px; visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;"><a title="搜狐畅游"><img src="image/1440526632916.png" width="160" height="80"></a></li>
+                      <li class="wow slideInUp" data-wow-delay=".1s" style="float: left; list-style: none; position: relative; width: 160px; visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;"><a title="盛大游戏"><img src="image/1440581374674.png" width="160" height="80"></a></li>
+                      <li class="wow slideInUp" data-wow-delay=".1s" style="float: left; list-style: none; position: relative; width: 160px; visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;"><a href="javascript:;" title="龙图游戏"><img src="image/1439886165501.png" width="160" height="80"></a></li>
+                    </ul> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+  </div>
+</div>  
+
+<div id="footer">
+  <p>COPYRIGHT (©) 2016  末那工作室 | 中国高端模型供应商. 京ICP备15059203号</p>
+</div>
+<div id="goTop" class="fa fa-angle-up">
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
